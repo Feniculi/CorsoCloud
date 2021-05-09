@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #add4b3;
+  color: white;
+  height: 90vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: black 0 0 0.4em;
+}
+
+.content {
+  height: 90%;
+  width: 90%;
+  margin: auto;
+  margin-top: 2.5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+.content > .side {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 40%;
+  flex-grow: 0;
+  width: 100%;
+  overflow-x: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.content > .dog-image {
+  flex-basis: 60%;
+  flex-grow: 0;
+}
+
+.dog-img {
+  height: 100%;
+  max-width: 100%;
+}
+
+#dog-breed {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-style: italic;
+  color: black;
+}
+
+#breed-info {
+  text-align: left;
+  white-space: pre;
+  background-color: black;
+  overflow-x: auto;
+  flex: 1;
+  max-height: 70%;
+}
+#dog-img {
+  max-width: 100%;
+}
+
+.btn {
+  background-color: rgb(33, 91, 129);
+  border-radius: 2%;
+  color: white;
+  font-size: medium;
+  padding: 1%;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
