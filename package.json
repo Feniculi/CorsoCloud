@@ -11,7 +11,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.32.12",
     "web-vitals": "^1.0.1",
-    "wikipedia": "^1.1.1"
+    "wikijs": "^6.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

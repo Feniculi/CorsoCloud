@@ -4834,7 +4834,7 @@ __metadata:
     react-scripts: 4.0.3
     sass: ^1.32.12
     web-vitals: ^1.0.1
-    wikipedia: ^1.1.1
+    wikijs: ^6.2.0
   languageName: unknown
   linkType: soft
 
@@ -4910,6 +4910,15 @@ __metadata:
     safe-buffer: ^5.0.1
     sha.js: ^2.4.8
   checksum: 98957676a93081678a2a915ae14898d65aac9b5651ffa55b8888484dd9d79c06d3cb3f85b137cd833ab536d87adee17394bb2b0efc591ea0e34110266d5bcd75
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.0.2":
+  version: 3.1.4
+  resolution: "cross-fetch@npm:3.1.4"
+  dependencies:
+    node-fetch: 2.6.1
+  checksum: 47b33bc773d53f19805eeac914e7d76e022a1aee3b7a55277fae3d3d1a0cff354b92c4ec6c5d99aeef3e5757c2719e94c37879ba846c33de892e68a655758b61
   languageName: node
   linkType: hard
 
@@ -7642,6 +7651,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"hyntax@npm:^1.1.9":
+  version: 1.1.9
+  resolution: "hyntax@npm:1.1.9"
+  checksum: bad4219184c14d79879f54ebeb1854c4f4e643519230eff530e430b5f4f42c56e38cf8f261241cc04ed331df48b90d8c286c82e0b71fba3f5abb94f064dc6f99
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:0.4.24":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -7813,7 +7829,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"infobox-parser@npm:^3.4.1":
+"infobox-parser@npm:3.6.0":
   version: 3.6.0
   resolution: "infobox-parser@npm:3.6.0"
   dependencies:
@@ -10059,7 +10075,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1":
+"node-fetch@npm:2.6.1":
   version: 2.6.1
   resolution: "node-fetch@npm:2.6.1"
   checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37
@@ -15150,13 +15166,14 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"wikipedia@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "wikipedia@npm:1.1.1"
+"wikijs@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "wikijs@npm:6.2.0"
   dependencies:
-    infobox-parser: ^3.4.1
-    node-fetch: ^2.6.1
-  checksum: eb3d41fa81e9ff70bdf441c67ae38dfcc1b698b9add382bd4cd68ff477211da6c3383ad78cb9ce7b829292c22226a1db0eb01c2e23c26dc7f577baa0cb051820
+    cross-fetch: ^3.0.2
+    hyntax: ^1.1.9
+    infobox-parser: 3.6.0
+  checksum: 7d337d3fe6aadc201f8080d8c79212d3283da7da18f2bd3ec418459473aabc637ac15ce5fe69eb8ce3f6fbddbb5b4f6c70766fccfff469d9ef97b1d36040c19d
   languageName: node
   linkType: hard
 
