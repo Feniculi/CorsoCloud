@@ -1,1 +1,10 @@
-.chat-container {}
+$color-primary  : #5885af;
+$color-secondary: #0c2d48;
+$color-base     : #b1d4e0;
+
+.chat-container {
+  flex            : 1;
+  height          : 100vh;
+  background-color: $color-base;
+
+}
