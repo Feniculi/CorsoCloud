@@ -3,8 +3,21 @@ $color-secondary: #0c2d48;
 $color-base     : #b1d4e0;
 
 .chat-container {
-  flex            : 1;
+  flex            : 4;
   height          : 100vh;
   background-color: $color-base;
+  justify-content : space-between;
+  display         : flex;
+  flex-direction  : column;
 
+  .search {
+    background-color       : $color-primary;
+    border-top-left-radius : 1rem;
+    border-top-right-radius: 1rem;
+    flex                   : 0.5
+  }
+
+  .messages {
+    flex: 5
+  }
 }

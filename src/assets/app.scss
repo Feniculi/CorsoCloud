@@ -16,7 +16,6 @@
 
   .sidebar {
     flex            : 1;
-    height          : 100vh;
     background-color: #282c34;
     height          : 100vh;
     display         : flex;
@@ -27,7 +26,7 @@
     color           : white;
 
     .logo {
-      height        : 40vmin;
+      height        : 20vmin;
       pointer-events: none;
     }
 

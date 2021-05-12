@@ -4239,6 +4239,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "camelcase@npm:4.1.0"
+  checksum: 6ca41b5114ef3683013fb51cf9a11c60dcfeef90ceb0075c2d77b7455819e2acdcc7fb5c033314f862212acb23056f1774879dfc580938a9a27ecc345856d1a3
+  languageName: node
+  linkType: hard
+
 "camelcase@npm:^6.0.0, camelcase@npm:^6.1.0, camelcase@npm:^6.2.0":
   version: 6.2.0
   resolution: "camelcase@npm:6.2.0"
@@ -4827,6 +4834,7 @@ __metadata:
     react-scripts: 4.0.3
     sass: ^1.32.12
     web-vitals: ^1.0.1
+    wikipedia: ^1.1.1
   languageName: unknown
   linkType: soft
 
@@ -7805,6 +7813,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"infobox-parser@npm:^3.4.1":
+  version: 3.6.0
+  resolution: "infobox-parser@npm:3.6.0"
+  dependencies:
+    camelcase: ^4.1.0
+  checksum: de3f065122cd43da7446280688dc610c42e301e5bb2fb31506584c52f0e39ae0a2dd118a5815b6499d4f3d93d3e6ee83287ff4df7293d3105b10b85cbaeffaeb
+  languageName: node
+  linkType: hard
+
 "inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.1, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
@@ -10039,6 +10056,13 @@ fsevents@^1.2.7:
     lower-case: ^2.0.2
     tslib: ^2.0.3
   checksum: 84db4909caec37504c6655f995a004067f8733be8cd8d849f1578661b60a1685e086325fa4e1a5e8ce94e7416c1d0f037e2a00f635a14457183de80ab4fc7612
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "node-fetch@npm:2.6.1"
+  checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37
   languageName: node
   linkType: hard
 
@@ -15123,6 +15147,16 @@ resolve@^2.0.0-next.3:
   dependencies:
     string-width: ^1.0.2 || 2
   checksum: 4f850f84da84b7471d7b92f55e381e7ba286210470fe77a61e02464ef66d10e96057a0d137bc013fbbedb7363a26e79c0e8b21d99bb572467d3fee0465b8fd27
+  languageName: node
+  linkType: hard
+
+"wikipedia@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "wikipedia@npm:1.1.1"
+  dependencies:
+    infobox-parser: ^3.4.1
+    node-fetch: ^2.6.1
+  checksum: eb3d41fa81e9ff70bdf441c67ae38dfcc1b698b9add382bd4cd68ff477211da6c3383ad78cb9ce7b829292c22226a1db0eb01c2e23c26dc7f577baa0cb051820
   languageName: node
   linkType: hard
 
