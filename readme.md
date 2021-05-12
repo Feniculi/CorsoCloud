@@ -6,3 +6,7 @@ cd ./nome-app
 yarn start
 yarn add sass
 assets->convertire css
+
+wipedia con ricerca tipo chat
+risulrtato come card
+tasto condividi copia negli appunti, apri in altra scheda
