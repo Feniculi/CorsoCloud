@@ -7,7 +7,6 @@ yarn start
 yarn add sass
 assets->convertire css
 componente chat
-rework sidebar
 
 wipedia con ricerca tipo chat
 risulrtato come card
