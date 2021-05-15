@@ -5,7 +5,7 @@ Fate riferimento sempre al branch della lezione che volete vedere
 
 
 
-## lezione2
+## lezione2 (workflow)
 - installare node 16
 - npm config get prefix -> aggiungere alla path
 - npm install -g yarn
