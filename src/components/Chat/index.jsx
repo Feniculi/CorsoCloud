@@ -13,7 +13,6 @@ export const Chat = () => {
     setSearch( "" )
     try {
       const res = await wikipedia.summary( toSearch )
-      console.log( res )
       setMessages( prev => [...prev, {
         title: res.displaytitle || res.title,
         text: res.extract,
@@ -39,7 +38,7 @@ export const Chat = () => {
           <h1>Wikipedia</h1>
           <h2>BOT</h2>
           <figure className="avatar">
-            <img src="https://it.wikipedia.org/static/images/project-logos/itwiki.png" /></figure>
+            <img src="https://it.wikipedia.org/static/images/project-logos/itwiki.png" alt="wikipedialogo" /></figure>
         </div>
         <div className="messages">
           <div className="messages-content" id="chat-history">
