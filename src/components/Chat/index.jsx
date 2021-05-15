@@ -7,29 +7,29 @@ export const Chat = () => {
   const [messages, setMessages] = useState( [] )
   const [search, setSearch] = useState( "" )
 
-  const searchCurrent = async () => {
-    const toSearch = search
-    setMessages( prev => [...prev, { text: search, personal: true }] )
-    setSearch( "" )
-    try {
-      const res = await wikipedia.summary( toSearch )
-      setMessages( prev => [...prev, {
-        title: res.displaytitle || res.title,
-        text: res.extract,
-        imgUrl: res?.thumbnail?.source || res?.originalImage?.source,
-        actionUrl: res?.content_urls?.desktop?.page,
-        response: res
-      }] )
-    } catch ( e ) {
-      console.log( e.message, toSearch )
-    }
-  }
+  /* const searchCurrent = async () => {
+     const toSearch = search
+     setMessages( prev => [...prev, { text: search, personal: true }] )
+     setSearch( "" )
+     try {
+       const res = await wikipedia.summary( toSearch )
+       setMessages( prev => [...prev, {
+         title: res.displaytitle || res.title,
+         text: res.extract,
+         imgUrl: res?.thumbnail?.source || res?.originalImage?.source,
+         actionUrl: res?.content_urls?.desktop?.page,
+         response: res
+       }] )
+     } catch ( e ) {
+       console.log( e.message, toSearch )
+     }
+   }*/
 
-  useEffect( () => {
+  /*useEffect( () => {
     const chatHistory = document.getElementById( "chat-history" );
     if ( chatHistory )
       chatHistory.scrollTop = chatHistory.scrollHeight;
-  }, [messages] )
+  }, [messages] )*/
 
   return (
     <>
@@ -42,7 +42,7 @@ export const Chat = () => {
         </div>
         <div className="messages">
           <div className="messages-content" id="chat-history">
-            {
+            {/*
               messages.length === 0 ? <h3>Non ci sono messaggi qui...</h3> :
                 messages.map( ( message, idx ) =>
                   <div key={idx} className={`message ${message.personal ? 'message-personal' : ''}`}>
@@ -52,7 +52,7 @@ export const Chat = () => {
                       imgUrl={message.imgUrl}
                       actionUrl={message.actionUrl}
                     />
-                  </div> )
+                  </div> )*/
             }
           </div>
         </div>
@@ -64,11 +64,11 @@ export const Chat = () => {
             autoComplete="off"
             onKeyDown={evt => {
               if ( evt.key === "Enter" ) {
-                searchCurrent()
+                // searchCurrent()
               }
             }}
           />
-          <button type="submit" className="message-submit" onClick={searchCurrent}>Cerca</button>
+          <button type="submit" className="message-submit" onClick={() => console.log( 'cerca' )}>Cerca</button>
         </div>
 
       </div>
