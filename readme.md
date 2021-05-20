@@ -5,17 +5,22 @@ Fate riferimento sempre al branch della lezione che volete vedere
 
 
 
-## lezione2 (workflow)
-- installare node 16
-- npm config get prefix -> aggiungere alla path
-- npm install -g yarn
-- yarn create react-app ./nome-app
-- cd ./nome-app
-- yarn start
-- yarn add sass
-- assets->convertire css
-- componente chat
+## lezione_3 (workflow)
+- https://next--material-ui.netlify.app/ 
+```
+yarn add @material-ui/core@next @emotion/react @emotion/styled
+```
+- installare font Roboto guida ->  https://fontsource.org/docs/getting-started
+```
+yarn add @fontsource/roboto
 
-- wipedia con ricerca tipo chat
-- risulrtato come card
-- tasto condividi copia negli appunti, apri in altra scheda
+// nella indes.js
+import '@fontsource/roboto'
+
+```
+- installare icone
+```
+yarn add @material-ui/icons
+```
+
+https://github.com/mui-org/material-ui/blob/next/docs/src/pages/getting-started/templates/pricing/Pricing.js
