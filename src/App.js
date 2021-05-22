@@ -1,4 +1,3 @@
-import { Chat } from './components/Chat';
 import {
   BrowserRouter as Router,
   Switch,

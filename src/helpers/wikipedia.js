@@ -1,7 +1,8 @@
 const endpoint_rest = "https://it.wikipedia.org/api/rest_v1/"
 const endpoint_php = 'https://it.wikipedia.org/w/api.php?'
 
-export const summary = async ( query ) => {
+export const summary = async ( inQuery ) => {
+  const query = inQuery.toLowerCase()
   /*
     {
       query: {
