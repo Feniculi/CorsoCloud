@@ -15,6 +15,11 @@ oppure farlo da github desktop
 ```
 file -> clone -> https://github.com/Feniculi/CorsoCloud.git
 ```
+passare al branch della lezione_3
+```
+git checkout lezione_3
+```
+
 installare le librerie (nella cartella del progetto)
 ```
 yarn install
