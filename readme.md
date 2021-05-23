@@ -5,8 +5,8 @@ Fate riferimento sempre al branch della lezione che volete vedere
 
 
 
-## lezione_3 (workflow)
-### (da zero)
+# lezione_3 (workflow)
+## (da zero)
 clonare il repo
 ```
 git clone https://github.com/Feniculi/CorsoCloud.git
@@ -24,7 +24,7 @@ avviare il dev server
 yarn start
 ```
 
-### (a partire da lezione_2)
+## (a partire da lezione_2)
 Libreria componenti: https://next--material-ui.netlify.app/ 
 ```
 yarn add @material-ui/core@next @emotion/react @emotion/styled
