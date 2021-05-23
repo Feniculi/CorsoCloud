@@ -7,12 +7,21 @@ Fate riferimento sempre al branch della lezione che volete vedere
 
 ## lezione2 (workflow)
 - installare node 16
-- npm config get prefix -> aggiungere alla path
+- aggiungere alla path
+```
+ npm config get prefix 
+```
 - npm install -g yarn
-- yarn create react-app ./nome-app
-- cd ./nome-app
-- yarn start
-- yarn add sass
+- Apri una powershell come admin e scegliere S
+``` 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+```
+ yarn create react-app ./nome-app
+ cd ./nome-app
+ yarn start
+ yarn add sass
+```
 - assets->convertire css
 - componente chat
 
