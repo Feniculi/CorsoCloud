@@ -48,7 +48,7 @@ export const NavBar = () => {
           Feniculi
           </Typography>
         <Link to="/contattaci">
-          <Button href="#" variant="outlined" className={classes.link}>
+          <Button variant="outlined" className={classes.link}>
             Contattaci
           </Button>
         </Link>
