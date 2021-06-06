@@ -2,36 +2,79 @@ import React, { useEffect, useState } from 'react'
 import './styles.scss'
 import wikipedia from 'helpers/wikipedia'
 import { Card } from 'components/Card'
+import { firestore, functions } from 'helpers/firebaseProvider'
 
-export const Chat = ( props ) => {
-  const [messages, setMessages] = useState( [] )
-  const [search, setSearch] = useState( "" )
+export const Chat = (props) => {
+  const [messages, setMessages] = useState([])
+  const [search, setSearch] = useState("")
 
   const searchCurrent = async () => {
     const toSearch = search
-    setMessages( prev => [...prev, { text: search, personal: true }] )
-    setSearch( "" )
+    setMessages(prev => [...prev, { text: search, personal: true }])
+    setSearch("")
     try {
-      const res = await wikipedia.summary( toSearch )
+
+      let echo = functions.httpsCallable('echo');
+
+      let risultato = await echo({ text: toSearch })
+      console.log('risultato cloud', risultato.data.text)
+      /*const res = await wikipedia.summary( toSearch )
       console.log( 'API_RESULT', res )
-      setMessages( prev => [...prev, {
+      const risultatoApi = {
         title: res.displaytitle || res.title,
         text: res.extract,
         imgUrl: res?.thumbnail?.source || res?.originalImage?.source,
         actionUrl: res?.content_urls?.desktop?.page,
         response: res
-      }] )
-    } catch ( e ) {
-      console.log( e.message, toSearch )
+      }
+      setMessages( prev => [...prev, risultatoApi] )
+      const docRef = await firestore.collection( "messages" ).add( {
+        query: toSearch,
+        risultatoApi
+      } )
+      console.log( "Document written with ID: ", docRef.id );*/
+    } catch (e) {
+      console.log(e.message, toSearch)
     }
   }
 
-  useEffect( () => {
-    console.log( 'nuovo messaggio' )
-    const chatHistory = document.getElementById( "chat-history" );
-    if ( chatHistory )
+  const getMessages = async () => {
+    /*let docs = [...( await firestore.collection( "messages" ).get() )]
+    docs = docs.map( doc => ( { id: doc.id, ...doc.data() } ) )
+    console.log( docs )*/
+    const newMessages = []
+    firestore.collection("messages").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        newMessages.push({ text: doc.data().query, personal: true })
+        newMessages.push(doc.data().risultatoApi)
+      })
+      setMessages(newMessages)
+    })
+    //firestore.collection( "messages" ).doc("Q3rIkAD4wrwIUnqbECF5")
+    /*firestore.doc( `messages/pino` ).set( {
+      query: "documento con id predefinito"
+    } )*/
+  }
+
+  useEffect(() => {
+    const chatHistory = document.getElementById("chat-history");
+    if (chatHistory)
       chatHistory.scrollTop = chatHistory.scrollHeight;
-  }, [messages] )
+  }, [messages])
+
+  useEffect(() => {
+    getMessages()
+    /*const unsubscribe = firestore.collection( "messages" ).where( "query", "==", "garibaldi" )
+      .onSnapshot( ( querySnapshot ) => {
+        querySnapshot.forEach( ( doc ) => {
+          console.log( `Documento ${doc.id} ha cercato garibaldi` )
+        } );
+      } );
+
+    return () => {
+      unsubscribe()
+    }*/
+  }, [])
 
   return (
     <>
@@ -46,7 +89,7 @@ export const Chat = ( props ) => {
           <div className="messages-content" id="chat-history">
             {
               messages.length === 0 ? <h3>Non ci sono messaggi qui...</h3> :
-                messages.map( ( message, idx ) =>
+                messages.map((message, idx) =>
                   <div key={`messagio_${idx}`} className={`message ${message.personal ? 'message-personal' : ''}`}>
                     <Card
                       title={message.title}
@@ -54,7 +97,7 @@ export const Chat = ( props ) => {
                       imgUrl={message.imgUrl}
                       actionUrl={message.actionUrl}
                     />
-                  </div> )
+                  </div>)
             }
           </div>
         </div>
@@ -63,10 +106,10 @@ export const Chat = ( props ) => {
             placeholder="Inserisci ricerca..."
             maxLength={50}
             value={search}
-            onChange={e => setSearch( e.target.value )}
+            onChange={e => setSearch(e.target.value)}
             autoComplete="off"
             onKeyDown={evt => {
-              if ( evt.key === "Enter" ) {
+              if (evt.key === "Enter") {
                 searchCurrent()
               }
             }}

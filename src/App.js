@@ -10,6 +10,8 @@ import Landing from 'pages/Landing';
 import { NavBar } from 'components/NavBar';
 import { Contacts } from 'pages/Contacts';
 import { ChatFab } from 'components/ChatFab';
+import PrivateRoute from "components/PrivateRoute";
+import { Login } from "pages/Login";
 
 
 const defaultTheme = createTheme();
@@ -23,9 +25,8 @@ export default function App() {
         <NavBar />
 
         <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
+          <Route path="/login" component={Login} />
+          <PrivateRoute path="/" exact component={Landing} />
           <Route path="/contattaci">
             <Contacts />
           </Route>
